@@ -2,7 +2,7 @@ package question1;
 
 public class SelectionSort {
 
-	public static void main(String[] args) {
+	public static void main() {
 		int [] A = {7, 4, 8 ,2, 5, 3, 9};
 		sort(A);
 		show(A); // display the sorted result A
