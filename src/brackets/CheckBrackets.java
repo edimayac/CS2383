@@ -6,18 +6,23 @@ public class CheckBrackets {
 	private static char[] s = new char[10];
 	
 	public static void main(String[] args) {
-		String s = "(((()())()))";
-		for (int i = 0; i < s.length(); i++) {
-			char bracket = s.charAt(i);
-			if (bracket == '(') {
-				push(bracket);
-			} else {
-				try {
+		String s = "((((((()(())()))";
+		try {
+			for (int i = 0; i < s.length(); i++) {
+				char bracket = s.charAt(i);
+				if (bracket == '(') {
+					push(bracket);
+				} else {
 					pop();
-				} catch (Exception e) {
-					System.out.println(e);
 				}
 			}
+			if (empty()) {
+				System.out.println("Valid Bracket");
+			} else {
+				System.out.println("Invalid Bracket");
+			}
+		} catch (Exception e) {
+			System.out.println(e);
 		}
 	}
 	
