@@ -2,32 +2,34 @@ package queue;
 
 public class Queue {
 
-	private static int r;
-	private static int f;
-	private static int[] q;
+	private int r;
+	private int f;
+	private int[] q;
 	
-	public static void main(String[] args) {
-		
+	public Queue() {
+		this.f = -1;
+		this.r = -1;
+		this.q = new int[50];
 	}
 	
-	private static void queue_init() {
+	public void queue_init() {
 		f = -1;
 		r = -1;
 	}
 
-	private static boolean empty() {
+	public boolean empty() {
 		return r == -1;
 	}
 	
-	private static int front() {
+	public int front() throws Exception{
 		if (empty()) {
-			throw EmptyStackException;
+			throw new Exception("Empty Queue");
 		} else {
 			return q[f];
 		}
 	}
 	
-	private static void enqueue(int val) {
+	public void enqueue(int val) throws Exception{
 		if (val > 0) {
 			if (empty()) {
 				r = 0;
@@ -38,7 +40,7 @@ public class Queue {
 					r = 0;
 				}
 				if (r==f) {
-					throw FullQException;
+					throw new Exception("Full Queue");
 				}
 			}
 			q[r] = val;
@@ -49,9 +51,9 @@ public class Queue {
 		}
 	}
 	
-	private static void dequeue() {
+	public void dequeue() throws Exception{
 		if (empty()) {
-			throw EmptyStackException;
+			throw new Exception("Empty Queue");
 		} else {
 			if (r == f) {
 				r = -1;

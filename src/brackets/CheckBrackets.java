@@ -2,45 +2,39 @@ package brackets;
 
 public class CheckBrackets {
 
-	private static int t;
-	private static int[] s;
+	private static int t = -1;
+	private static char[] s = new char[10];
 	
-	private static void stack_init() {
-		t = -1;
+	public static void main(String[] args) {
+		String s = "(((()())()))";
+		for (int i = 0; i < s.length(); i++) {
+			char bracket = s.charAt(i);
+			if (bracket == '(') {
+				push(bracket);
+			} else {
+				try {
+					pop();
+				} catch (Exception e) {
+					System.out.println(e);
+				}
+			}
+		}
 	}
-
+	
 	private static boolean empty() {
 		return t == -1;
 	}
 	
-	private static int top() {
-		if (empty()) {
-			throw EmptyStackException;
-		} else {
-			return s[t];
-		}
+	private static void push(char val) {
+		t = t + 1;
+		s[t] = val;
 	}
 	
-	private static void push(int val) {
-		if (val > 0) {
-			s[++t] = val;
-		} else if (val == 0) {
-			pop();
-		} else {
-			System.out.println(top());
-		}
-	}
-	
-	private static void pop() {
+	private static void pop() throws Exception {
 		if (empty()) {
-			throw EmptyStackException;
+			throw new Exception("Invalid Brackets");
 		} else {
 			t--;
 		}
 	}
-
-	public static void main(String[] args) {
-
-	}
-
 }

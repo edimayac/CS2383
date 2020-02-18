@@ -7,7 +7,7 @@ public class MonkeyEatPeach {
 	}
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		// TODO Auto-generate	d method stub
 
 	}
 
