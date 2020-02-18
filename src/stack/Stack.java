@@ -2,36 +2,45 @@ package stack;
 
 public class Stack {
 
-	private Node top;
+	private int t;
+	private int[] s;
 	
 	public Stack() {
-		this.top = null;
+		this.t = -1;
+		s = new int[50];
 	}
 	
 	public void stack_init() {
-		top = null;
+		t = -1;
 	}
 
 	public boolean empty() {
-		return top == null;
+		return t == -1;
 	}
 	
-	public Node top() {
-		return top;
+	public int top() {
+		if (empty()) {
+			throw EmptyStackException;
+		} else {
+			return s[t];
+		}
 	}
 	
 	public void push(int val) {
-		Node temp = new Node(val);
-		temp.data = val;
-		temp.next = top;
-		top = temp;
+		if (val > 0) {
+			s[++t] = val;
+		} else if (val == 0) {
+			pop();
+		} else {
+			System.out.println(top());
+		}
 	}
 	
 	public void pop() {
 		if (empty()) {
-			System.out.println("Stack is Empty");
+			throw EmptyStackException;
 		} else {
-			top = top.next;
+			t--;
 		}
 	}
 }
