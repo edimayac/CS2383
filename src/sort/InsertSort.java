@@ -1,6 +1,6 @@
-package question1;
+package sort;
 
-public class SelectionSort {
+public class InsertSort {
 
 	public static void main() {
 		int [] A = {7, 4, 8 ,2, 5, 3, 9};
@@ -9,15 +9,15 @@ public class SelectionSort {
 	}
 	
 	public static void sort(int[] A) {
-		int temp = 0;
-		for (int i = 0; i < A.length; i++) {
-			for (int j = i; j < A.length; j++) {
-				if (A[j] < A[i]) {
-					temp = A[i];
-					A[i] = A[j];
-					A[j] = temp;
-				}
+		for (int i = 1; i < A.length; i++) {
+			// i = 0
+			int a = A[i]; //4
+			int b = i - 1; //0
+			while (b > -1  && a < A[b]) { // 4 < 7 && 0 >= 0 true
+				A[b + 1] = A[b]; //A[1] = 7
+				b = b - 1; // 0 - 1				
 			}
+			A[b + 1] = a; // A[1] = 4
 		}
 	}
 	
@@ -26,5 +26,4 @@ public class SelectionSort {
 			System.out.print(A[i] + ", ");
 		}
 	}
-
 }
