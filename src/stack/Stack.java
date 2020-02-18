@@ -2,22 +2,22 @@ package stack;
 
 public class Stack {
 
-	private int t;
-	private int[] s;
+	private static int t;
+	private static int[] s;
 	
-	public Stack() {
-		this.t = -1;
-		this.s = new int[50];
+	public static void main(String[] args) {
+		int 
 	}
-	private void stack_init() {
+	
+	private static void stack_init() {
 		t = -1;
 	}
 
-	private boolean empty() {
+	private static boolean empty() {
 		return t == -1;
 	}
 	
-	private int top() {
+	private static int top() {
 		if (empty()) {
 			throw EmptyStackException;
 		} else {
@@ -25,7 +25,7 @@ public class Stack {
 		}
 	}
 	
-	private void push(int val) {
+	private static void push(int val) {
 		if (val > 0) {
 			s[++t] = val;
 		} else if (val == 0) {
@@ -35,15 +35,11 @@ public class Stack {
 		}
 	}
 	
-	private void pop() {
+	private static void pop() {
 		if (empty()) {
 			throw EmptyStackException;
 		} else {
 			t--;
 		}
-	}
-	
-	public static void main(String[] args) {
-		
 	}
 }
