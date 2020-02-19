@@ -2,10 +2,10 @@ package sort;
 
 public class SelectionSort {
 
-	public static void main() {
+	public static void main(String[] args) {
 		int [] A = {7, 4, 8 ,2, 5, 3, 9};
 		sort(A);
-		show(A); // display the sorted result A
+		show(A); 
 	}
 	
 	public static void sort(int[] A) {
