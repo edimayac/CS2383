@@ -1,4 +1,4 @@
-package stack;
+package assn1;
 
 public class Stack {
 
@@ -6,7 +6,6 @@ public class Stack {
 	private int[] s;
 	
 	public Stack() {
-		this.t = -1;
 		this.s = new int[50];
 	}
 	

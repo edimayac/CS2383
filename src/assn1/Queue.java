@@ -1,4 +1,4 @@
-package queue;
+package assn1;
 
 public class Queue {
 
@@ -7,8 +7,6 @@ public class Queue {
 	private int[] q;
 	
 	public Queue() {
-		this.f = -1;
-		this.r = -1;
 		this.q = new int[50];
 	}
 	

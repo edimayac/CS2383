@@ -1,4 +1,4 @@
-package monkey;
+package assn1;
 
 public class MonkeyEatPeach {
 
