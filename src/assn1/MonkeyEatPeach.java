@@ -7,6 +7,11 @@ public class MonkeyEatPeach {
 
 	}
 	
+	/*
+	 * Eat algorithm to answer Monkey peach problem
+	 * First parameter is how many peaches left
+	 * Second parameter is how many days in the last days till beginning
+	 */
 	private static int eat(int n, int d) {
 		if(d == 1) {
 			return n;
