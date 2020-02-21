@@ -19,7 +19,7 @@ public class Stack {
 	
 	public int top() throws Exception {
 		if (empty()) {
-			throw new Exception("Empty Stack");
+			throw new Exception("Error - Stack is Empty");
 		} else {
 			return s[t];
 		}
@@ -37,7 +37,7 @@ public class Stack {
 	
 	public void pop() throws Exception{
 		if (empty()) {
-			throw new Exception("Empty Stack");
+			throw new Exception("Error - Stack is Empty");
 		} else {
 			t--;
 		}

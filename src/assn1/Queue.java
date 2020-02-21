@@ -21,7 +21,7 @@ public class Queue {
 	
 	public int front() throws Exception{
 		if (empty()) {
-			throw new Exception("Empty Queue");
+			throw new Exception("Error - Queue is Empty");
 		} else {
 			return q[f];
 		}
@@ -38,7 +38,7 @@ public class Queue {
 					r = 0;
 				}
 				if (r==f) {
-					throw new Exception("Full Queue");
+					throw new Exception("Error - Queue is Full");
 				}
 			}
 			q[r] = val;
@@ -51,7 +51,7 @@ public class Queue {
 	
 	public void dequeue() throws Exception{
 		if (empty()) {
-			throw new Exception("Empty Queue");
+			throw new Exception("Error - Queue is Empty");
 		} else {
 			if (r == f) {
 				r = -1;
